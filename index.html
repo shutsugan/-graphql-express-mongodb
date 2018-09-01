@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Express GraphQL</title>
+</head>
+<body>
+	<h1>This is just a normal Post</h1>
+
+	<div>Enter a new item in teh text box and </div>
+	<div>hit Submit to save it to the database</div>
+
+	<form action="/quotes" method="POST">
+		<input 
+			type="text" 
+			name="item" 
+			placeholder="item"
+		>
+		<button type="submit">Submit</button>
+	</form>
+
+	<br>
+	<hr>
+	<br>
+
+	<h2>GraphQL Test</h2>
+	<div>
+		<a href="/graphql?query={todo(itemId:1){itemId, item}}">GraphQL Test</a>
+	</div>
+</body>
+</html>
