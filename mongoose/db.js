@@ -2,7 +2,8 @@
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://shutsugan:root@ds211289.mlab.com:11289/mongo');
+//your mlab uri
+mongoose.connect(/*mongodb://<dbuser>:<dbpassword>@ds211289.mlab.com:11289*/);
 
 const db = mongoose.connection;
 

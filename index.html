@@ -6,7 +6,7 @@
 <body>
 	<h1>This is just a normal Post</h1>
 
-	<div>Enter a new item in teh text box and </div>
+	<div>Enter a new item in the text box and </div>
 	<div>hit Submit to save it to the database</div>
 
 	<form action="/quotes" method="POST">
@@ -24,7 +24,25 @@
 
 	<h2>GraphQL Test</h2>
 	<div>
-		<a href="/graphql?query={todo(itemId:1){itemId, item}}">GraphQL Test</a>
+		<a href="/graphql?query={todo(itemId:1){itemId, item}}">GraphQL end-point</a>
 	</div>
+
+	<br>
+	<hr>
+	<br>
+
+	<div class="list"></div>
+
+	<script type="text/javascript">
+		const list = document.querySelector('.list');
+		const url = '/graphql?query={todo(itemId:1){itemId, item}}';
+
+		fetch(url)
+			.then(res => res.json())
+			.then(res => {
+				const items = res.data.todo.map(item => item.item);
+				list.innerHTML = items.join('\n');
+			});
+	</script>
 </body>
 </html>
