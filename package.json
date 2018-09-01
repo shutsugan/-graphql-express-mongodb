@@ -9,5 +9,8 @@
   },
   "keywords": [],
   "author": "Muhammad Tajjiou <shutsugan@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.16.3"
+  }
 }
